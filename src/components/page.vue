@@ -8,7 +8,7 @@
 
 	<div class="row rt-main" v-if="loaded ==='true'">
 
-		<div class="medium-12 small-12 column" >
+		<div class="rt-post-container" >
 
 			<div class="rt-post">
 

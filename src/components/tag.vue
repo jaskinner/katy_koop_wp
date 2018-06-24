@@ -8,7 +8,7 @@
 
 		<div class="row rt-main" v-if="loaded === 'true'" >
 
-			<div class="medium-12 small-12 column" v-for="post in posts" :key="post.slug">
+			<div class="rt-post-container" v-for="post in posts" :key="post.slug">
 
 				<div class="rt-post">
 

@@ -6,22 +6,16 @@
 
 	<transition name="slide-fade">
 
-		<div class="row rt-main" v-if="loaded === 'true'" >
+		<div class="rt-post-container" v-if="loaded === 'true'" >
 
-			<div class="medium-12 small-12 column rt-pagination">
-					<a href=""  v-if="showPrev" v-on:click.prevent="rtShowPrev()"> &LT; prev  </a>
-					<a > {{ currentPage }} / {{ totalPages }} </a>
-					<a href=""  v-if="showNext" v-on:click.prevent="rtShowNext()"> more &GT; </a>
-			</div>
-
-			<div class="medium-12 small-12 column" v-for="post in posts" :key="post.slug">
+			<div class="" v-for="post in posts" :key="post.slug">
 
 				<div class="rt-post">
 
 					<h2 class="rt-post-title"><router-link :to="{ name: 'post', params: { name:post.slug }}"> {{ post.title.rendered }} </router-link> </h2>
 					<div class="rt-meta">
 						<span class="posted-on">
-							Posted On
+							&#8226;
 							<span class="date" v-text="formatDate( post )">
 							</span>
 						</span>
@@ -39,6 +33,12 @@
 
 			</div>
 
+		</div>
+
+		<div class="">
+			<a href=""  v-if="showPrev" v-on:click.prevent="rtShowPrev()"> &LT; prev  </a>
+			<a > {{ currentPage }} / {{ totalPages }} </a>
+			<a href=""  v-if="showNext" v-on:click.prevent="rtShowNext()"> more &GT; </a>
 		</div>
 
 	</transition>

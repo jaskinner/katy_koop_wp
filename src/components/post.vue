@@ -7,13 +7,15 @@
 
 			<div class="row rt-main" v-if="loaded === 'true'">
 
-				<div class="medium-12 small-12 column" >
+				<div class="rt-post-container" >
 
 					<div class="rt-post">
 
 						<h2 class="rt-post-title"> {{ post.title.rendered }}</h2>
 
-						<div class="progressive full">
+						<div class="rt-post-divider"></div>
+
+						<div class="progressive">
 
 							<img class="lazy"
 								v-progressive="post.featured_image_src['full'][0]" 

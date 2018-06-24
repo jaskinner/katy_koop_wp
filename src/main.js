@@ -22,8 +22,8 @@ import post from './components/post.vue';
 Vue.component( 'post', post );
 import header from './components/theme-header.vue';
 Vue.component( 'theme-header', header );
-import footer from './components/theme-footer.vue';
-Vue.component( 'theme-footer', footer );
+import menu from './components/theme-menu.vue';
+Vue.component( 'theme-menu', menu );
 import page from './components/page.vue';
 Vue.component( 'page', page );
 import category from './components/category.vue';
@@ -34,7 +34,7 @@ Vue.component( 'tag', tag );
 const App = Vue.extend( {
 	template: '<div id="page" class="hfeed site"><theme-header></theme-header>' +
 			'<main><router-view></router-view></main>' +
-			'<theme-footer></theme-footer></div>',
+			'<theme-menu></theme-menu></div>',
 	computed: {
 	}
 } );
