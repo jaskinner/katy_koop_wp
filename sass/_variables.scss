@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,800|Playfair+Display:900,900i');
+
+$screen-xs-min: 440px;
+$screen-sm-min: 768px;
+$screen-md-min: 992px;
+$screen-lg-min: 1200px;
+
+$primary-color: #FFB6C1;
+$secondary-color: #707070;
+$primary-font: 'Open Sans', sans-serif;
+$secondary-font: 'Playfair Display', serif;
+
+$text-size-small: 1.5rem;
+$text-size-normal: 3rem;
+$text-size-large: 5.625rem;
+$text-size-xlarge: 12.5rem;
+
+%link-first-letter {
+  color: $primary-color;
+  font-weight: 800;
+  cursor: pointer;
+  text-transform: capitalize;
+}
+
+%link-text {
+  color: $secondary-color;
+  font-weight: 300;
+  cursor: pointer;
+}

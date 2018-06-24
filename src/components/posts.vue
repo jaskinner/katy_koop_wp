@@ -4,44 +4,48 @@
 
 <template>
 
-	<transition name="slide-fade">
+    <transition name="slide-fade">
 
-		<div class="rt-post-container" v-if="loaded === 'true'" >
+        <div class="rt-post-container" v-if="loaded === 'true'">
 
-			<div class="" v-for="post in posts" :key="post.slug">
+            <div class="rt-post-wrapper" v-for="post in posts" :key="post.slug">
 
-				<div class="rt-post">
+                <div class="rt-post">
 
-					<h2 class="rt-post-title"><router-link :to="{ name: 'post', params: { name:post.slug }}"> {{ post.title.rendered }} </router-link> </h2>
-					<div class="rt-meta">
+                    <h2 class="rt-post-title">
+                        <router-link :to="{ name: 'post', params: { name:post.slug }}"><p> {{ post.title.rendered
+                            }} </p></router-link>
+                    </h2>
+                    <div class="rt-meta">
 						<span class="posted-on">
 							&#8226;
 							<span class="date" v-text="formatDate( post )">
 							</span>
 						</span>
-					</div>
-					
-					<div class="progressive full" v-if="post.featured_image_src['full'][0]">
+                    </div>
 
-						<img class="lazy" v-progressive="post.featured_image_src['full'][0]" :data-srcset="post.featured_image_src['srcset']" :src="post.featured_image_src['full'][0]" />
-						
-					</div>
+                    <div class="progressive full" v-if="post.featured_image_src['full'][0]">
 
-					<div class="rt-post-excerpt rt-content" v-html="post.excerpt.rendered" > </div>
+                        <img class="lazy" v-progressive="post.featured_image_src['full'][0]"
+                             :data-srcset="post.featured_image_src['srcset']"/>
 
-				</div>
+                    </div>
 
-			</div>
+                    <div class="rt-post-excerpt rt-content" v-html="post.excerpt.rendered"></div>
 
-		</div>
+                </div>
 
-		<div class="">
-			<a href=""  v-if="showPrev" v-on:click.prevent="rtShowPrev()"> &LT; prev  </a>
-			<a > {{ currentPage }} / {{ totalPages }} </a>
-			<a href=""  v-if="showNext" v-on:click.prevent="rtShowNext()"> more &GT; </a>
-		</div>
+            </div>
 
-	</transition>
+            <div class="">
+                <a href="" v-if="showPrev" v-on:click.prevent="rtShowPrev()"> &LT; prev </a>
+                <a> {{ currentPage }} / {{ totalPages }} </a>
+                <a href="" v-if="showNext" v-on:click.prevent="rtShowNext()"> more &GT; </a>
+            </div>
+
+        </div>
+
+    </transition>
 
 </template>
 

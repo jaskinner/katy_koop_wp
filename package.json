@@ -1,8 +1,8 @@
 {
-  "name": "rt-vue-theme",
-  "description": "WordPress theme using Rest API and Vue.js by rtCamp",
+  "name": "katy-koop-blog",
+  "description": "Blog by Katy Koop",
   "version": "1.0.0",
-  "author": "rtCamp",
+  "author": "Jon Skinner",
   "private": true,
   "scripts": {
     "dev": "cross-env NODE_ENV=development webpack-dev-server --open --hot",
@@ -12,7 +12,12 @@
     "ci": "concurrently \"npm run build\" \"npm run lint\""
   },
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.0",
+    "@fortawesome/free-solid-svg-icons": "^5.1.0",
+    "@fortawesome/vue-fontawesome": "^0.1.0",
     "axios": "^0.16.1",
+    "i": "^0.3.6",
+    "npm": "^6.1.0",
     "progressive-image": "^1.0.1",
     "vue": "^2.2.1",
     "vue-resource": "^1.2.1",

@@ -6,13 +6,13 @@
 
 	<transition name="slide-fade">
 
-		<div class="row rt-main" v-if="loaded === 'true'" >
+		<div class="rt-post-container" v-if="loaded === 'true'" >
 
-			<div class="rt-post-container" v-for="post in posts" :key="post.slug">
+			<div class="rt-post-wrapper" v-for="post in posts" :key="post.slug">
 
 				<div class="rt-post">
 
-					<h2 class="rt-post-title"><router-link :to="{ name: 'post', params: { name:post.slug }}"> {{ post.title.rendered }} </router-link> </h2>
+					<h2 class="rt-post-title"><router-link :to="{ name: 'post', params: { name:post.slug }}"><p> {{ post.title.rendered }} </p></router-link> </h2>
 
 					<div class="rt-meta">
 						<span class="posted-on">
@@ -24,7 +24,7 @@
 
 					<div class="progressive full" v-if="post.featured_image_src['full'][0]">
 
-						<img class="lazy" v-progressive="post.featured_image_src['full'][0]" :data-srcset="post.featured_image_src['srcset']" :src="post.featured_image_src['full'][0]" />
+						<img class="lazy" v-progressive="post.featured_image_src['full'][0]" :data-srcset="post.featured_image_src['srcset']" />
 
 					</div>
 

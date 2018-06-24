@@ -1,0 +1,30 @@
+.site-header {
+  a {
+    text-decoration: none;
+    display: inline-block;
+  }
+}
+
+.logo-wrapper {
+
+  display: flex;
+  width: 90%;
+
+  .logo-letter {
+    @extend %link-first-letter;
+    font-size: $text-size-xlarge;
+  }
+
+  .logo-names-wrapper {
+    @extend %link-text;
+    line-height: 5rem;
+    font-size: $text-size-large;
+    padding-top: 3.75rem;
+    margin-left: -3.5rem;
+
+    .logo-last-name-letter {
+      display: none;
+    }
+  }
+
+}

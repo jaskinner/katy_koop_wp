@@ -3,43 +3,46 @@
 </style>
 
 <template>
-		<transition name="slide-fade">
 
-			<div class="row rt-main" v-if="loaded === 'true'">
+	<transition name="slide-fade">
 
-				<div class="rt-post-container" >
+		<div class="row rt-main" v-if="loaded === 'true'">
 
-					<div class="rt-post">
+			<div class="rt-post-container">
 
-						<h2 class="rt-post-title"> {{ post.title.rendered }}</h2>
+				<div class="rt-post">
 
-						<div class="rt-post-divider"></div>
+					<h2 class="rt-post-title"> {{ post.title.rendered }}</h2>
 
-						<div class="progressive">
+					<div class="progressive">
 
-							<img class="lazy"
-								v-progressive="post.featured_image_src['full'][0]" 
-								:data-srcset="post.featured_image_src['srcset']" 
-								:src="post.featured_image_src['full'][0]" 
-							/>
-						</div>
-
-						<div class="rt-post-content rt-content" v-html="post.content.rendered" ></div>
-
-						<div class="rt-cat-list">
-							<router-link v-for="x in post.cat_name" :to="{ name: 'cat', params: { name:x.slug } }" :key="x.id"> {{ x.name }} </router-link>
-						</div>
-
-						<div class="rt-tag-list">
-							<router-link v-for="x in post.tag_name" :to="{ name: 'tag', params: { name:x.slug } }" :key="x.id"> {{ x.name }} </router-link>
-						</div>
+						<img class="lazy"
+							 :src="post.featured_image_src['full'][0]"
+						/>
 					</div>
 
+					<div class="rt-post-content rt-content" v-html="post.content.rendered"></div>
+
+					<div class="rt-cat-list">
+						<span>Category: </span>
+						<router-link v-for="x in post.cat_name" :to="{ name: 'cat', params: { name:x.slug } }"
+									 :key="x.id"> {{ x.name }}
+						</router-link>
+					</div>
+
+					<div class="rt-tag-list">
+						<span>Tags: </span>
+						<router-link v-for="x in post.tag_name" :to="{ name: 'tag', params: { name:x.slug } }"
+									 :key="x.id"> {{ x.name }}
+						</router-link>
+					</div>
 				</div>
 
 			</div>
 
-		</transition>
+		</div>
+
+	</transition>
 
 </template>
 
