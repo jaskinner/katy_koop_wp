@@ -8,6 +8,7 @@
   color: #707070;
   font-family: "Open Sans", sans-serif;
   font-weight: 300;
+  padding-bottom: 3rem;
 }
 
 #page .rt-post-title > a,#page .site-header > a,#page .footer-nav-item > a,#page .rt-post-title {
@@ -17,6 +18,10 @@
   -webkit-transition: all 200ms ease;
   transition: all 200ms ease;
   text-decoration: none;
+}
+
+#page .rt-post-title {
+  text-transform: capitalize;
 }
 
 #page .footer-nav-item > a {
@@ -43,12 +48,14 @@
 }
 
 .logo-wrapper {
-  font-size: 4.75rem;
+  font-size: 5.75rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
+  padding-bottom: 0.5rem;
+  border-bottom: 0.2rem solid #FFB6C1;
 }
 
 .logo-wrapper .logo-letter {
@@ -65,11 +72,11 @@
   display: flex;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-  font-size: 1.75rem;
+  font-size: 3rem;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  height: 4rem;
+  height: 5rem;
   padding-top: 1.2rem;
 }
 
@@ -142,8 +149,7 @@
 
 @media (min-width: 768px) {
   #page {
-    margin: 0;
-    margin-top: 2rem;
+    margin: 2rem;
     margin-left: 3rem;
     margin-right: 3rem;
   }
@@ -165,10 +171,12 @@
     flex-wrap: wrap;
     -webkit-transition: all 1s ease;
     transition: all 1s ease;
+    padding-bottom: 1rem;
   }
 
   .logo-wrapper .logo-names-wrapper {
     font-size: 4.75rem;
+    height: 4rem;
   }
 
   .logo-wrapper .logo-names-wrapper .logo-first-name {

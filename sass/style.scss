@@ -14,6 +14,7 @@ $site-second-font: 'Playfair Display', serif;
   color: $site-text;
   font-family: $site-font-family;
   font-weight: 300;
+  padding-bottom: 3rem;
 
   .rt-post-title > a,
   .site-header > a,
@@ -24,6 +25,10 @@ $site-second-font: 'Playfair Display', serif;
     font-weight: 300;
     transition: all 200ms ease;
     text-decoration: none;
+  }
+
+  .rt-post-title {
+    text-transform: capitalize;
   }
 
   .footer-nav-item > a {
@@ -52,9 +57,11 @@ $site-second-font: 'Playfair Display', serif;
 }
 
 .logo-wrapper {
-  font-size: 4.75rem;
+  font-size: 5.75rem;
   display: flex;
   flex-wrap: wrap;
+  padding-bottom: 0.5rem;
+  border-bottom: 0.2rem solid $site-primary;
 
   .logo-letter {
     color: $site-primary;
@@ -65,9 +72,9 @@ $site-second-font: 'Playfair Display', serif;
   .logo-names-wrapper {
     display: flex;
     flex-wrap: wrap;
-    font-size: 1.75rem;
+    font-size: 3rem;
     align-items: center;
-    height: 4rem;
+    height: 5rem;
     padding-top: 1.2rem;
 
     span {
@@ -131,8 +138,7 @@ $site-second-font: 'Playfair Display', serif;
 
 @media (min-width: $screen-sm-min) {
   #page {
-    margin: 0;
-    margin-top: 2rem;
+    margin: 2rem;
     margin-left: 3rem;
     margin-right: 3rem;
   }
@@ -151,9 +157,11 @@ $site-second-font: 'Playfair Display', serif;
     display: flex;
     flex-wrap: wrap;
     transition: all 1s ease;
+    padding-bottom: 1rem;
 
     .logo-names-wrapper {
       font-size: 4.75rem;
+      height: 4rem;
 
       .logo-first-name {
         flex: 0 0 auto;
