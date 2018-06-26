@@ -1,0 +1,38 @@
+@media (min-width: $screen-md-min) {
+  .footer {
+    width: 80vw;
+    height: 4rem;
+    margin-left: -2rem;
+    margin-top: 2rem;
+    padding: 0 10vw;
+    border-top: 1px solid $primary-color;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .social-blocks {
+      display: flex;
+      height: 100%;
+      width: 25vw;
+
+      div {
+        flex: 1 0 auto;
+        height: 100%;
+      }
+
+      .facebook-block {
+        background-color: #3b5998;
+      }
+
+      .instagram-block {
+        background-color: #517fa4;
+      }
+
+      .twitter-block {
+        background-color: #00aced;
+      }
+    }
+  }
+}
+

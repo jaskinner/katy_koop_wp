@@ -3,9 +3,14 @@
 @import "logo";
 @import "menu";
 @import "posts";
+@import "footer";
 
+body {
+  margin-bottom: 0;
+}
 #page {
-  margin: 0;
+  margin: -0.5rem;
+  margin-bottom: 0;
   color: $secondary-color;
   font-family: $primary-font;
   font-weight: 300;

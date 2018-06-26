@@ -8,6 +8,8 @@
 
 		<div class="rt-post-container" v-if="loaded === 'true'">
 
+			<h1 class="collection-title">{{ formattedTitle }}</h1>
+
 			<div class="rt-post-wrapper" v-for="post in posts" :key="post.slug">
 
 				<div class="rt-post">
@@ -66,7 +68,8 @@ export default {
 			loaded: 'false',
 			pageTitle: '',
 			totalCount: '',
-			catName: ''
+			catName: '',
+            formattedTitle: ''
 
 		};
 
@@ -89,7 +92,9 @@ export default {
 
 				vm.pageTitle = 'Category' + ' - ' + vm.catName;
 
-				vm.$store.commit( 'rtChangeTitle', vm.pageTitle );
+            	vm.formattedTitle = vm.catName.replace('-', ' ');
+
+            vm.$store.commit( 'rtChangeTitle', vm.pageTitle );
 
 			} )
 			.catch( ( res ) => {

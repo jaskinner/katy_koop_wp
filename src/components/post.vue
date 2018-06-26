@@ -12,7 +12,7 @@
 
 				<div class="rt-post">
 
-					<h2 class="rt-post-title"> {{ post.title.rendered }}</h2>
+					<h1 class="post-header-title"> {{ post.title.rendered }}</h1>
 
 					<div class="progressive">
 

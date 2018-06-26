@@ -37,10 +37,10 @@
 
             </div>
 
-            <div class="">
-                <a href="" v-if="showPrev" v-on:click.prevent="rtShowPrev()"> &LT; prev </a>
+            <div class="pagination" v-if="totalPages > 1">
+                <a href="" v-if="showPrev" v-on:click.prevent="rtShowPrev()"> <i class="fas fa-angle-double-left"></i> </a>
                 <a> {{ currentPage }} / {{ totalPages }} </a>
-                <a href="" v-if="showNext" v-on:click.prevent="rtShowNext()"> more &GT; </a>
+                <a href="" v-if="showNext" v-on:click.prevent="rtShowNext()"> <i class="fas fa-angle-double-right"></i> </a>
             </div>
 
         </div>
