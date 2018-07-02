@@ -4,7 +4,7 @@
 
 <template>
 
-    <transition name="slide-fade">
+    <transition name="slide-fade" enter-active-class="animated zoomInUp" leave-active-class="animated zoomOutDown">
 
         <div class="rt-post-container" v-if="loaded === 'true'">
 

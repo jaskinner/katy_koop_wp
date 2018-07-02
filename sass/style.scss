@@ -4,6 +4,7 @@
 @import "menu";
 @import "posts";
 @import "footer";
+@import "animate";
 
 body {
   margin-bottom: 0;
@@ -14,6 +15,10 @@ body {
   color: $secondary-color;
   font-family: $primary-font;
   font-weight: 300;
+}
+
+main {
+  min-height: 332px;
 }
 
 @media (min-width: $screen-md-min) {

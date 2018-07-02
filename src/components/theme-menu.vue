@@ -11,14 +11,15 @@
             <a href=""><i class="fab fa-instagram"></i></a>
             <a href=""><i class="fab fa-twitter"></i></a>
         </div>
-        <div class="site-menu"></div>
-        <nav class="site-menu-nav">
-            <span class="site-menu-nav-item" v-for="item in menus">
-                <router-link v-if="item.type != 'custom'" :to="{ name: 'page', params: { name: getUrlName( item.url ) }}"> {{ item.title }}
-                </router-link>
-                <router-link v-if="item.type == 'custom'" :to="{ name: 'home'}">{{ item.title }}</router-link>
-            </span>
-        </nav>
+        <div class="site-menu">
+            <nav class="site-menu-nav">
+                <span class="site-menu-nav-item" v-for="item in menus">
+                    <router-link v-if="item.type != 'custom'" :to="{ name: 'page', params: { name: getUrlName( item.url ) }}"> {{ item.title }}
+                    </router-link>
+                    <router-link v-if="item.type == 'custom'" :to="{ name: 'home'}">{{ item.title }}</router-link>
+                </span>
+            </nav>
+        </div>
     </div>
 
 </template>

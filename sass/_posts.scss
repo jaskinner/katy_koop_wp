@@ -2,6 +2,7 @@
   cursor: auto;
   font-size: 4rem;
   margin-top: 0;
+  word-break: break-all;
   @extend %link-text;
   &:first-letter {
     @extend %link-first-letter;
@@ -10,6 +11,9 @@
 }
 
 .rt-post {
+  margin: 1rem;
+  text-align: center;
+
   img {
     max-height: 80vh;
     max-width: 50vw;
@@ -20,6 +24,7 @@
   .rt-post-title {
     font-size: 2rem;
     margin-bottom: 0;
+
 
     a {
       @extend %link-text;
@@ -35,6 +40,10 @@
         @extend %link-first-letter;
       }
     }
+  }
+
+  .rt-content {
+    text-align: left;
   }
 
   .posted-on {
