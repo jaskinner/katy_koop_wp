@@ -1,0 +1,173 @@
+// This is an empty scss file for your custom styles - Please add your super duper awesome mega design styles here
+
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,800|Playfair+Display:900,900i');
+
+.site-menu {
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 0;
+	bottom: 0;
+	width: 100vw;
+	z-index: 1;
+	background-color: $primary-color;
+	transition: height 0.5s ease;
+	display: flex;
+	flex-direction: column;
+	overflow: hidden;
+
+	.site-menu-nav {
+		flex: 0 0 85vh;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-around;
+		align-items: center;
+
+		a {
+			@extend %link-text;
+			font-family: $secondary-font;
+			text-decoration: none;
+			font-size: $text-size-normal;
+			line-height: 3rem;
+		}
+
+		a:hover {
+			font-style: italic;
+		}
+
+	}
+}
+
+.social-links {
+	flex: 0 0 10vh;
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+	font-size: 1.5rem;
+	position: fixed;
+	bottom: 1rem;
+	left: 0;
+	width: 100%;
+	z-index: 2;
+	opacity: 0;
+	transition: opacity 0.25s;
+	transition-delay: 0.5s;
+
+	a {
+		color: $secondary-color;
+
+		i {
+			color: white;
+		}
+	}
+}
+
+.site-menu-toggle {
+	position: fixed;
+	margin: 1rem;
+	height: 2rem;
+	width: 2rem;
+	top: 0;
+	right: 0;
+	z-index: 2;
+	transition: all 0.5s ease;
+
+	span {
+		background-color: $secondary-color;
+		display: block;
+		width: 2rem;
+		height: 0.25rem;
+		border-radius: 1rem;
+		margin-bottom: 0.5rem;
+		transition: all 0.5s ease;
+	}
+
+}
+
+.toggled-menu {
+	.site-menu {
+		height: 100vh;
+	}
+
+	.social-links {
+		opacity: 9;
+	}
+
+	.site-menu-toggle {
+		padding-top: 0.5rem;
+
+		span {
+			margin-bottom: -.25rem;
+		}
+
+		span:first-child {
+			transform: rotate(45deg);
+		}
+
+		span:nth-child(2) {
+			opacity: 0;
+		}
+
+		span:last-child {
+			transform: rotate(-45deg);
+		}
+
+	}
+}
+
+@media (min-width: $screen-md-min) {
+	.site-menu {
+		right: 10vw;
+		left: auto;
+		height: 100vh;
+		width: 25vw;
+		display: flex;
+		z-index: 0;
+
+		.site-menu-nav {
+			flex: 0 0 85vh;
+			padding: 0 1rem;
+			align-items: center;
+			justify-content: center;
+
+			span {
+				flex: 1 0 auto;
+				display: flex;
+				align-items: center;
+				width: 100%;
+				justify-content: space-around;
+				text-align: center;
+			}
+
+		}
+
+	}
+
+	.site-menu-toggle {
+		display: none;
+	}
+
+	.social-links {
+		flex: 0 0 10vh;
+		display: flex;
+		justify-content: space-around;
+		align-items: center;
+		font-size: 1.5rem;
+		position: fixed;
+		bottom: 1rem;
+		left: 65vw;
+		width: 25vw;
+		z-index: 2;
+		opacity: 1;
+
+		a {
+			color: $secondary-color;
+
+			i {
+				color: white;
+			}
+		}
+	}
+
+}
+

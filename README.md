@@ -1,41 +1,152 @@
-<p align="center">
-<a href="https://rtcamp.com" target="_blank"><img width="200"src="https://rtcamp.com/wp-content/uploads/2018/04/rtcamp-logo-1.svg"></a>
-</p>
+Travis build: [![Build Status](https://travis-ci.org/understrap/understrap.svg?branch=master)](https://travis-ci.org/understrap/understrap)
+
+#### See: [Official Demo](https://understrap.com/understrap) | Read: [Official Docs Page](https://understrap.github.io/)
+
+# UnderStrap WordPress Theme Framework
+
+Website: [https://understrap.com](https://understrap.com)
+
+Child Theme Project: [https://github.com/understrap/understrap-child](https://github.com/understrap/understrap-child)
+
+## About
+
+I’m a huge fan of Underscores, Bootstrap, and Sass. Why not combine these into a solid WordPress Theme Framework? That’s what UnderStrap is. You can use it as a starter theme and build your own theme on top of it. Or you can use it as a parent theme and create your own child theme for UnderStrap.
+
+## License
+UnderStrap WordPress Theme, Copyright 2013-2018 Holger Koenemann
+UnderStrap is distributed under the terms of the GNU GPL version 2
+
+http://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html
+
+## Changelog
+See [changelog](CHANGELOG.md)
 
 
-# VueTheme - WordPress Theme + VueJs
-WordPress theme using WP REST API and [VueJs 2](http://vuejs.org) by [rtCamp](https://rtcamp.com).
-This theme is base theme for WordPress theme developers.
+## Basic Features
 
-## How to use?
-1. Go to your WP theme directory (in `/wp-content/theme/`)
-2. Clone / Download this repo
-3. Activate your theme from WordPress theme's backend
-4. This theme will display menu which has set display location to Primary Menu. 
-5. Make sure you fulfill all the requirements before using theme. (See [Requirements](#requirements))
+- Combines Underscore’s PHP/JS files and Bootstrap’s HTML/CSS/JS.
+- Comes with Bootstrap (v4) Sass source files and additional .scss files. Nicely sorted and ready to add your own variables and customize the Bootstrap variables.
+- Uses a single minified CSS file for all the basic stuff.
+- [Font Awesome](http://fortawesome.github.io/Font-Awesome/) integration (v4.7.0)
+- Jetpack ready.
+- WooCommerce support.
+- Contact Form 7 support.
+- [Child Theme](https://github.com/holger1411/understrap-child) ready.
+- Translation ready.
 
-## How to use it for development?
-1. Go to your WP theme directory & navigate to VueTheme.
-2. Install dependencies `npm install`
-1. Make sure you add `define( 'RT_VUE_DEV', true );` in `wp-config.php` to get asset files from webpack dev server.
-3. To start dev server with hot reload `npm run dev`
-4. To create build for production with minification `npm run build`
+## Starter Theme + HTML Framework = WordPress Theme Framework
 
-## Requirements
-* [WP API Menus plugin](https://wordpress.org/plugins/wp-api-menus/)
-* WordPress Version 4.7+
+The _s theme is a good starting point to develop a WordPress theme. But it is “just” a raw starter theme. That means it outputs all the WordPress stuff correctly but without any layout or design.
+Why not add a well known and supported layout framework to have a solid, clean and responsive foundation? That’s where Bootstrap comes in.
 
-## Frameworks / Packages used
-* [Vue 2](http://vuejs.org)
-* [Vue-Router](https://github.com/vuejs/vue-router)
-* [Vuex](https://github.com/vuejs/vuex)
-* [Axios](https://github.com/mzabriskie/axios)
-* [Babel](https://babeljs.io)
-* [Webpack](https://webpack.js.org/)
-* [Foundation CSS Grid](http://foundation.zurb.com/grid.html)
-* [Gulp](http://gulpjs.com/)
+## Confused by All the CSS and Sass Files?
 
-<p align="center">
-<a href="https://wordpress.org" target="_blank"><img width="200"src="https://s.w.org/about/images/logos/wordpress-logo-hoz-rgb.png"></a>
-<a href="https://vuejs.org" target="_blank"><img width="50"src="https://vuejs.org/images/logo.png"></a>
-</p>
+Some basics about the Sass and CSS files that come with UnderStrap:
+- The theme itself uses the `/style.css`file only to identify the theme inside of WordPress. The file is not loaded by the theme and does not include any styles.
+- The `/css/theme.css` and its minified little brother `/css/theme.min.css` file(s) provides all styles. It is composed of five different SCSS sets and one variable file at `/sass/theme.scss`:
+
+ ```@import "theme/theme_variables";  // 1. Add your variables into this file. Also add variables to overwrite Bootstrap or UnderStrap variables here
+ @import "../src/bootstrap-sass/assets/stylesheets/bootstrap";  // 2. All the Bootstrap stuff - Don´t edit this!
+ @import "understrap/understrap"; // 3. Some basic WordPress stylings and needed styles to combine Boostrap and Underscores
+ @import "../src/fontawesome/scss/font-awesome"; // 4. Font Awesome Icon styles
+ // Any additional imported files //
+ @import "theme/theme";  // 5. Add your styles into this file
+ ```
+
+- Don’t edit the number 2-4 files/filesets listed above or you won’t be able to update Understrap without overwriting your own work!
+- Your design goes into: `/sass/theme`. 
+  - Add your styles to the `/sass/theme/_theme.scss` file 
+  - And your variables to the `/sass/theme/_theme_variables.scss`
+  - Or add other .scss files into it and `@import` it into `/sass/theme/_theme.scss`.
+
+## Installation
+There are several ways to install UnderStrap. We'll look at three of them: (1) classic install by uploading UnderStrap to a WordPress install, (2) using npm, and (3) using the theme directory in WordPress. 
+
+### Classic install
+- Download the understrap folder from GitHub or from [https://understrap.com](https://understrap.com)
+- IMPORTANT: If you download it from GitHub make sure you rename the "understrap-master.zip" file just to "understrap.zip" or you might have problems using child themes!
+- Upload it into your WordPress installation theme subfolder: `/wp-content/themes/`
+- Login to your WordPress backend
+- Go to Appearance → Themes
+- Activate the UnderStrap theme
+
+### npm install
+- Open your terminal
+- Change to the directory where you want to add UnderStrap
+- Type `npm install understrap`
+
+### WordPress.org install
+- Open your WordPress backend
+- Click on "Appearance -> Themes"
+- Hit the "Add new" button
+- Search for "UnderStrap"
+- Hit the "install" button
+- Activate the theme
+
+## Developing With npm, Gulp and SASS and [Browser Sync][1]
+
+### Installing Dependencies
+- Make sure you have installed Node.js and Browser-Sync (optional) on your computer globally
+- Then open your terminal and browse to the location of your UnderStrap copy
+- Run: `$ npm install`
+
+### Running
+To work with and compile your Sass files on the fly start:
+
+- `$ gulp watch`
+
+Or, to run with Browser-Sync:
+
+- First change the browser-sync options to reflect your environment in the file `/gulpconfig.json` in the beginning of the file:
+```javascript
+{
+    "browserSyncOptions" : {
+        "proxy": "localhost/theme_test/", // <----- CHANGE HERE
+        "notify": false
+    },
+    ...
+};
+```
+- then run: `$ gulp watch-bs`
+
+## How to Use the Built-In Widget Slider
+
+The front-page slider is widget driven. Simply add more than one widget to widget position “Hero”.
+- Click on Appearance → Widgets.
+- Add two, or more, widgets of any kind to widget area “Hero”.
+- That’s it.
+
+## RTL styles?
+Add a new file to the themes root folder called rtl.css. Add all alignments to this file according to this description:
+https://codex.wordpress.org/Right_to_Left_Language_Support
+
+## Page Templates
+UnderStrap includes several different page template files: (1) blank template, (2) empty template, and (3) full width template.
+
+### Blank Template
+
+The `blank.php` template is useful when working with various page builders and can be used as a starting blank canvas.
+
+### Empty Template
+
+The `empty.php` template displays a header and a footer only. A good starting point for landing pages.
+
+### Full Width Template
+
+The `fullwidthpage.php` template has full width layout without a sidebar.
+
+## Footnotes
+
+[1] Visit [http://browsersync.io](http://browsersync.io) for more information on Browser Sync
+
+Licenses & Credits
+=
+- Font Awesome: http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
+- Bootstrap: http://getbootstrap.com | https://github.com/twbs/bootstrap/blob/master/LICENSE (Code licensed under MIT documentation under CC BY 3.0.)
+and of course
+- jQuery: https://jquery.org | (Code licensed under MIT)
+- WP Bootstrap Navwalker by Edward McIntyre: https://github.com/twittem/wp-bootstrap-navwalker | GNU GPL
+- Bootstrap Gallery Script based on Roots Sage Gallery: https://github.com/roots/sage/blob/5b9786b8ceecfe717db55666efe5bcf0c9e1801c/lib/gallery.php
+
+
+[![Analytics](https://ga-beacon.appspot.com/UA-139292-31/chromeskel_a/readme)](https://github.com/igrigorik/ga-beacon)
